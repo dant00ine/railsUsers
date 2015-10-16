@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Edit User</title>
+	
+</head>
+<body>
+	<form action="/users/<%=@user.id%>" method="post">
+		<input type="hidden" name="_method" value="patch">
+		<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+		<div class="form-group">
+			<b>First Name:</b>
+			<label for="first_name"></label>
+			<input type="text" name="first_name" id="first_name" value="<%=@user.first_name%>">
+			</div>	
+		<div class="form-group">
+			<b>Last Name:</b>
+			<label for="last_name"></label>
+			<input type="text" name="last_name" id="last_name" value="<%=@user.last_name%>">
+		</div>
+		<div class="form-group">
+			<b>Email:</b>
+			<label for="email"></label>
+			<input type="text" name="email" id="email" value="<%=@user.email%>">
+		</div>
+			<b>Password:</b>
+			<label for="password"></label>
+			<input type="password" name="password" id="password" value="<%=@user.password%>">
+			<button>Update</button>
+	</form>	
+</body>
+</html>
